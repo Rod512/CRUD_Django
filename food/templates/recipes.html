@@ -11,7 +11,7 @@
 <div class="container mt-5">
     <form class="col-6 mx-auto card" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <h2 class="text-center mb-3">Recipe Form</h2>
+        <h2 class="text-center mb-3">Add Recipe</h2>
         <hr>
         <div class="form-group mt-3">
             <label for="email">Recipe Name</label>
@@ -32,6 +32,16 @@
 
         <button type="submit" class="btn btn-primary mb-3">Add Recipes</button>
     </form>
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <table class="table">
         <thead>
@@ -51,9 +61,9 @@
                 <td>{{food.recipe_description}}</td>
                 <td>
                     <img src="/media/{{food.recipe_image}}" style="height: 200px;">
-                    <td>
-                        <a class="btn btn-danger" href="delete_recipes/{{food.id}}">Delete</a>
-                        
+                    <td class="d-flex">
+                        <a class="btn btn-danger mr-2" href="delete_recipes/{{food.id}}">Delete</a>
+                        <a class="btn btn-success" href="update_recipes/{{food.id}}">Update</a> 
                     </td>
                    
                 </td>
