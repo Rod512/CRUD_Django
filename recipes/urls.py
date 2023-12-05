@@ -12,7 +12,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('' , food_recipes, name="recipes"),
     path('delete_recipes/<id>/', delete_recipes, name='delete_recipes'),
-    path('update_recipes/<id>/', update_recipes, name='update_recipes')
+    path('update_recipes/<id>/', update_recipes, name='update_recipes'),
+    path('login', login_page, name= 'login'),
+    path('register', register_page, name= 'register')
 ]
 
 if settings.DEBUG:
