@@ -8,6 +8,16 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <a class="navbar-brand">Navbar</a>
+      <div class="form-inline">
+          {% if request.user.is_authenticated %}
+          <a href="/logout" class="btn btn-success mr-3"  type="submit">Logout</a>
+          {% else %}
+          <a href="/login" class="btn btn-success" type="submit">Login</a>
+          {% endif %}
+      </div>
+    </nav>
 
     <div class="container mt-5">
         <form class="col-6 mx-auto card" method="post" enctype="multipart/form-data">
@@ -15,17 +25,17 @@
             <h2 class="text-center mb-3">Add Recipe</h2>
             <hr>
             <div class="form-group mt-3">
-                <label for="email">Recipe Name</label>
+                <label for="Recipe Name">Recipe Name</label>
                 <input name="recipe_name" required type="text" class="form-control" placeholder="Enter recipe name">
             </div>
 
             <div class="form-group">
-                <label  for="password">Recipe Description</label>
+                <label  for="Recipe Description">Recipe Description</label>
                 <textarea name="recipe_description" class="form-control"></textarea>
             </div>
 
             <div class="form-group">
-                <label for="email" class="form-label">Recipe Image</label>
+                <label for="Recipe Image" class="form-label">Recipe Image</label>
                 <input name="recipe_image" type="file"
                 class="form-control" 
                 placeholder="Enter recipe name">

@@ -10,10 +10,11 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('' , food_recipes, name="recipes"),
+    path('', food_recipes, name="recipes"),
     path('delete_recipes/<id>/', delete_recipes, name='delete_recipes'),
     path('update_recipes/<id>/', update_recipes, name='update_recipes'),
     path('login', login_page, name= 'login'),
+    path('logout', logout_page, name= 'logout'),
     path('register', register_page, name= 'register')
 ]
 
